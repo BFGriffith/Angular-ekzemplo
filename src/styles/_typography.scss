@@ -1,0 +1,19 @@
+@use '@angular/material' as mat;
+$Ekzemplo-typography: mat.define-typography-level(
+  $font-family: 'Poppins',
+  $font-weight: 400,
+  $font-size: 1rem,
+  $line-height: 1,
+  $letter-spacing: normal,
+);
+
+@mixin app-typography($typography: $Ekzemplo-typography) {
+  @include mat-base-typography($typography);
+  @include mat-card-typography($typography);
+  @include mat-select-typography($typography);
+  @include mat-form-field-typography($typography);
+  @include mat-slide-toggle-typography($typography);
+  @include mat-toolbar-typography($typography);
+  // custom component typography
+  @include app-root-typography($typography);
+}

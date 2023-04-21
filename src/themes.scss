@@ -1,0 +1,16 @@
+@use '@angular/material' as mat;
+// first import any custom component themes?
+@import './styles/material-palettes';
+@import './styles/typography';
+// each palette can optionally specify a default, lighter, and darker hue
+$Ekzemplo-primary: mat.define-palette($RomanPatricianPURPLEpalette);
+$Ekzemplo-accent:  mat.define-palette($RomanNavalBLUEpalette);
+$Ekzemplo-warn:    mat.define-palette($RomanLegionaryREDpalette);
+// DARK THEME
+$dark-theme: mat.define-dark-theme(
+  $Ekzemplo-primary, $Ekzemplo-accent, $Ekzemplo-warn
+);
+// LIGHT THEME
+$light-theme: mat.define-light-theme(
+  $Ekzemplo-primary, $Ekzemplo-accent, $Ekzemplo-warn
+);

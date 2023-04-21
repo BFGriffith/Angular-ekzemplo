@@ -1,1 +1,64 @@
-/* You can add global styles to this file, and also import other style files */
+// Angular Material THEME
+// https://material.angular.io/guide/theming
+// https://material.angular.io/components/categories
+@use '@angular/material' as mat;
+@import '@angular/material/theming';
+@import './themes.scss';
+//@import './styles/typography';
+@include mat.core(); // only ever include this mixin once!
+//@include app-style-core();
+// imports for other components…
+// StyleSheet imports
+@import "./styles/reset"; // remove browser specific styles
+@import "./styles/mixins";
+@import "./styles/colors";
+//@import "./styles/theme";
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker hue
+// color palettes: https://material.io/design/color/
+$Angular-ekzemplo-primary: mat.define-palette($Ekzemplo-primary);
+$Angular-ekzemplo-accent: mat.define-palette($Ekzemplo-accent);
+$Angular-ekzemplo-warn: mat.define-palette($Ekzemplo-warn);
+// warn palette is optional (defaults to red)
+
+// THEME object
+// Theme object configurations such as "color" or "typography"
+$Angular-ekzemplo-theme: mat.define-light-theme((
+  color: (
+    primary: $Angular-ekzemplo-primary,
+    accent: $Angular-ekzemplo-accent,
+    warn: $Angular-ekzemplo-warn,
+  )
+));
+
+// DARK 🆚 LIGHT theme objects?
+
+// $Ekzemplo-dark-theme: mat-dark-theme($Ekzemplo-primary, $Ekzemplo-accent, $Ekzemplo-warn);
+// $Ekzemplo-light-theme: mat-light-theme($Ekzemplo-primary, $Ekzemplo-accent, $Ekzemplo-warn);
+// .dark-theme {
+//   @include angular-material-theme($Ekzemplo-dark-theme);
+//   background-color: black;
+// }
+// .light-theme {
+//   @include angular-material-theme($Ekzemplo-light-theme);
+// }
+
+// TYPOGRAPHY
+$material-typography: mat.define-typography-config(
+  $font-family: 'Poppins'
+);
+
+// include theme styles for core and each component used in your app…
+.mat-success {
+  background-color: mat.get-color-from-palette($RobinHoodForestGREENpalette, 500);
+  color: mat.get-color-from-palette($RobinHoodForestGREENpalette, 500-contrast);
+}
+@include mat.core-theme($Angular-ekzemplo-theme);
+@include angular-material-theme($Angular-ekzemplo-theme);
+@include mat.all-component-themes($Angular-ekzemplo-theme);
+// OR import then @include theme mixins for each component used.
+@include mat.all-component-colors($Angular-ekzemplo-theme);
+@include angular-material-typography($material-typography);
+html, body { height: 100%; }
+body { margin: 0; }

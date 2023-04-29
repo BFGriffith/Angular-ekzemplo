@@ -14,6 +14,7 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
@@ -39,6 +40,7 @@ export const coreModuleRoutes: Routes = [
     MatButtonModule,
     MatCardModule,
     MatDividerModule,
+    MatGridListModule,
     MatIconModule,
     MatInputModule,
     MatFormFieldModule,

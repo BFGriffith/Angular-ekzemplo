@@ -12,7 +12,7 @@
 @import "./styles/reset"; // remove browser specific styles
 @import "./styles/mixins";
 @import "./styles/colors";
-//@import "./styles/theme";
+@import "./styles/forms";
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker hue
@@ -58,7 +58,7 @@ $material-typography: mat.define-typography-config(
 @include angular-material-theme($Angular-ekzemplo-theme);
 @include mat.all-component-themes($Angular-ekzemplo-theme);
 // OR import then @include theme mixins for each component used.
-@include mat.all-component-colors($Angular-ekzemplo-theme);
+//@include mat.all-component-colors($Angular-ekzemplo-theme);
 @include angular-material-typography($material-typography);
 html, body { height: 100%; }
 body { margin: 0; }
